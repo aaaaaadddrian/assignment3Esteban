@@ -1,7 +1,7 @@
 public class SLNode {
 
-    private Song value;
-    private SLNode next;
+    public Song value;
+    public SLNode next;
 
     public SLNode(Song song){
         value = song;
@@ -14,6 +14,10 @@ public class SLNode {
 
     public SLNode getNext(){
         return next;
+    }
+
+    public void next(SLNode t){
+        next = t;
     }
 
 }

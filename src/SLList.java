@@ -1,33 +1,44 @@
 public class SLList {
 
-    private int headPointer;
-    private SLNode[] list;
-    private int maxSize;
+    private SLNode tail;
     private SLNode head;
 
     public SLList(){
-        maxSize = 10;
-        list = new SLNode[maxSize];
         head = null;
-        headPointer = 0;
+        tail = null;
     }
 
     public void addy(Song s){
-        list[headPointer] = new SLNode(s);
-        if(headPointer > maxSize){
-            maxSize *= 2;
-            SLNode[] tempList = new SLNode[maxSize];
-
-            for(int i = 0; i < list.length; i ++){
-                tempList[i] = list[i];
-            }
-            list = tempList;
+        SLNode newNode = new SLNode(s);
+        if(head == null){
+            head = newNode;
+            tail = newNode;
+        }else{
+            newNode.next = head;
+            newNode = head;
         }
-        headPointer++;
     }
 
     public void removey(int pos){
+        int currPos = 0;
+        SLNode currNode = tail;
+        while(currNode.next != null){
+            if(pos == currPos){
+                SLNode successive = currNode.next.next;
+                currNode.next = successive;
+            }
+            currPos++;
+            currNode = currNode.next;
+        }
+    }
 
+    public String toString(){
+        SLNode currNode = tail;
+        String result = "";
+        while(currNode != null){
+            result = result + " " + currNode.value + "\n";
+        }
+        return result;
     }
 
 
