@@ -32,13 +32,15 @@ public class AList {
     }
 
     public String toString(){
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         for(Song s : list){
-            result = result + s.getTitle() + "\n";
+            if(s != null){
+                result.append(s.getTitle()).append("\n");
+            }
         }
 
-        return result;
+        return result.toString();
     }
 
 

@@ -8,16 +8,5 @@ public class SLNode {
         next = null;
     }
 
-    public Song getValue(){
-        return value;
-    }
-
-    public SLNode getNext(){
-        return next;
-    }
-
-    public void next(SLNode t){
-        next = t;
-    }
 
 }

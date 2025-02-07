@@ -4,6 +4,12 @@ public class Song {
     private String artist;
     private double length;
 
+    public Song() {
+        title = "Suavemente";
+        artist = "Elvis Crespo";
+        length = 2.5;
+    }
+
     public Song(String title, String artist, double length) {
         this.title = title;
         this.artist = artist;
