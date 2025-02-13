@@ -27,6 +27,15 @@ public class DLList {
     }
 
     public void removey(int pos){
+        if(pos == 0){
+            head = head.next;
+            head.next.previous = head;
+        }
+        if(pos == size - 1){
+            tail = tail.previous;
+            tail.previous.next = tail;
+        }
+
         if(pos > size/2){
             DLNode current = tail;
             for(int i = size; i > pos; i--){

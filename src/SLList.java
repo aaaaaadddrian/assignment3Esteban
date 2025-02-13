@@ -25,7 +25,7 @@ public class SLList {
 
     public void removey(int pos){
         SLNode current = head;
-        if(pos == 1){
+        if(pos == 0){
             head = head.next;
         }else{
             for(int i = 0; i < pos; i++){
