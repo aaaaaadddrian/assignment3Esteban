@@ -53,4 +53,14 @@ public class DLList {
         }
         size--;
     }
+
+    public String toString(){
+        DLNode currNode = head;
+        String result = "";
+        while(currNode != null){
+            result = currNode.value.toString() + "\n";
+            currNode = currNode.next;
+        }
+        return result;
+    }
 }

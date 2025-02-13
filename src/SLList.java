@@ -36,15 +36,15 @@ public class SLList {
         size--;
     }
 
-//    public String toString(){
-//        SLNode currNode = head;
-//        String result = "";
-//        while(currNode != null){
-//            result = result + " " + currNode.value + "\n";
-//            currNode = currNode.next;
-//        }
-//        return result;
-//    }
+    public String toString(){
+        SLNode currNode = head;
+        String result = "";
+        while(currNode != null){
+            result = currNode.value.toString() + "\n";
+            currNode = currNode.next;
+        }
+        return result;
+    }
 
 
 

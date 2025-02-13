@@ -53,4 +53,15 @@ public class DLListGeneric<T> {
         }
         size--;
     }
+
+    public String toString(){
+        DLNodeGeneric currNode = head;
+        String result = "";
+        while(currNode != null){
+            result = currNode.value.toString() + "\n";
+            currNode = currNode.next;
+        }
+        return result;
+    }
+
 }

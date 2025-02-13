@@ -36,7 +36,7 @@ public class AList {
         for(int i = 0; i < size; i++){
             System.out.println(list[i]);
         }
-        return null;
+        return "";
     }
 
 }
