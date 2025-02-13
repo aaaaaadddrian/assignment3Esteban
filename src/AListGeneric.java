@@ -1,12 +1,11 @@
-public class AList {
-
+public class AListGeneric {
     private int size;
     private int maxSize;
-    private Song[] list;
+    private Object[] list;
 
-    public AList(){
+    public AListGeneric(){
         maxSize = 10;
-        list = new Song[maxSize];
+        list = new Object[maxSize];
         size = 0;
     }
 
@@ -14,10 +13,10 @@ public class AList {
         list[size] = s;
         if(size > maxSize){
             maxSize *= 2;
-            Song[] tempList = new Song[maxSize];
+            Object[] tempList = new Object[maxSize];
 
             for(int i = 0; i < list.length; i ++){
-                 tempList[i] = list[i];
+                tempList[i] = list[i];
             }
             list = tempList;
         }
@@ -31,12 +30,13 @@ public class AList {
         size--;
     }
 
-
+    //    public String toString(){
+    //
+    //    }
     public String toString(){
-        for(int i = 0; i < size; i++){
-            System.out.println(list[i]);
+        for(Object g : list){
+            return g.toString();
         }
         return null;
     }
-
 }
