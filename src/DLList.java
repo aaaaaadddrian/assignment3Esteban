@@ -1,7 +1,8 @@
 public class DLList {
 
-    DLNode head;
-    DLNode tail;
+    private DLNode head;
+    private DLNode tail;
+    private int size = 0;
 
     public DLList(){
         head = null;
@@ -13,20 +14,34 @@ public class DLList {
         if(head == null){
             head = newNode;
             tail = newNode;
-            newNode.next = null;
-            newNode.previous = null;
         }else{
-            head.next = newNode;
-            newNode.previous = head;
-            head = newNode;
+            DLNode current = head;
+            while(current.next != null){
+                current = current.next;
+            }
+            current.next = newNode;
+            newNode.previous = current;
+            tail = newNode;
         }
+        size++;
     }
 
     public void removey(int pos){
-        int count = 0;
-        DLNode currNode = tail;
-        while(currNode != null){
-
+        if(pos > size/2){
+            DLNode current = tail;
+            for(int i = size; i > pos; i--){
+                current = current.previous;
+            }
+            current.previous.previous.next = current;
+            current.previous = current.previous.previous;
+        }else{
+            DLNode current = head;
+            for(int i = 0; i < pos; i++){
+                current = current.next;
+            }
+            current.next.previous = current;
+            current.next = current.next.next;
         }
+        size--;
     }
 }

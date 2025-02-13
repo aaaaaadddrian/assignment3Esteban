@@ -1,45 +1,50 @@
 public class SLList {
 
-    private SLNode tail;
     private SLNode head;
+    private SLNode next;
+    private int size;
 
     public SLList(){
         head = null;
-        tail = null;
+        next = null;
     }
 
     public void addy(Song s){
         SLNode newNode = new SLNode(s);
         if(head == null){
             head = newNode;
-            tail = newNode;
         }else{
-            newNode.next = head;
-            newNode = head;
+            SLNode current = head;
+            while(current.next != null){
+                current = current.next;
+            }
+            current.next = newNode;
         }
+        size++;
     }
 
     public void removey(int pos){
-        int currPos = 0;
-        SLNode currNode = tail;
-        while(currNode.next != null){
-            if(pos == currPos){
-                SLNode successive = currNode.next.next;
-                currNode.next = successive;
+        SLNode current = head;
+        if(pos == 1){
+            head = head.next;
+        }else{
+            for(int i = 0; i < pos; i++){
+                current = current.next;
             }
-            currPos++;
-            currNode = currNode.next;
+            current.next = current.next.next;
         }
+        size--;
     }
 
-    public String toString(){
-        SLNode currNode = tail;
-        String result = "";
-        while(currNode != null){
-            result = result + " " + currNode.value + "\n";
-        }
-        return result;
-    }
+//    public String toString(){
+//        SLNode currNode = head;
+//        String result = "";
+//        while(currNode != null){
+//            result = result + " " + currNode.value + "\n";
+//            currNode = currNode.next;
+//        }
+//        return result;
+//    }
 
 
 

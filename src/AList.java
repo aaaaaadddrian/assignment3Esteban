@@ -31,17 +31,15 @@ public class AList {
         size--;
     }
 
-    public String toString(){
-        StringBuilder result = new StringBuilder();
-
-        for(Song s : list){
-            if(s != null){
-                result.append(s.getTitle()).append("\n");
-            }
+//    public String toString(){
+//
+//    }
+public String toString(){
+        for(Song g : list){
+            return g.toString();
         }
-
-        return result.toString();
-    }
+        return null;
+}
 
 
 

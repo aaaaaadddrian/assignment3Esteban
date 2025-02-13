@@ -20,6 +20,11 @@ public class Song {
         return title;
     }
 
+    public String toString(){
+        String k = "{title: " + title + " artist: " + artist + " length: " + length + "}";
+        return k;
+    }
+
 
 
 
